@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Composição A4 - Exploração Espacial</title>
+
+    <style>
+
+        /* Reset e Fundo Roxo */
+
+        body, html {
+
+            margin: 0;
+
+            padding: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-color: #6a1b9a;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            font-family: 'Montserrat', sans-serif, Arial;
+
+        }
+
+
+
+        /* Círculo Laranja (450px) */
+
+        .circle {
+
+            position: absolute;
+
+            width: 450px; 
+
+            height: 450px;
+
+            background-color: #ff9800;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            z-index: 1;
+
+            cursor: pointer;
+
+        }
+
+
+
+        /* Estilo das Folhas */
+
+        .paper {
+
+            position: absolute;
+
+            width: 200px; 
+
+            height: 280px; 
+
+            border-radius: 8px;
+
+            display: flex;
+
+            flex-direction: column;    /* Alinha título e texto um sob o outro */
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+            box-sizing: border-box;
+
+            text-align: center;
+
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+        }
+
+
+
+        /* Estilo do Conteúdo (ESCONDIDO POR PADRÃO) */
+
+        .paper h3, .paper p {
+
+            margin: 10px 5;
+
+            color: #333;
+
+            opacity: 0; 
+
+            transition: opacity 0.4s ease;
+
+            transition-delay: 0.2s;
+
+        }
+
+
+
+        .paper h3 {
+
+            font-size: 16px;
+
+            text-transform: uppercase;
+
+            border-bottom: 2px solid #ff9800;
+
+            padding-bottom: 5px;
+
+        }
+
+
+
+        .paper p {
+
+            font-size: 12px;
+
+            line-height: 1.4;
+
+            font-weight: 400;
+
+        }
+
+
+
+        /* --- ESTADO INICIAL --- */
+
+
+
+        .paper-bottom {
+
+            background-color: rgba(255, 255, 255, 0.3);
+
+            border: 1px solid rgba(255, 255, 255, 0.4);
+
+            transform: translate(-30px, 30px) rotate(-18deg);
+
+            z-index: 2;
+
+        }
+
+
+
+        .paper-middle {
+
+            background-color: rgba(255, 255, 255, 0.6);
+
+            transform: translate(-15px, 15px) rotate(-18deg);
+
+            z-index: 3;
+
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+
+        }
+
+
+
+        .paper-top {
+
+            background-color: #ffffff;
+
+            transform: translate(0px, 0px) rotate(-18deg);
+
+            z-index: 4;
+
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+
+        }
+
+
+
+        /* --- ESTADO HOVER --- */
+
+
+
+        .circle:hover .paper h3, 
+
+        .circle:hover .paper p {
+
+            opacity: 1;
+
+        }
+
+
+
+        .circle:hover .paper {
+
+            rotate: 0deg;
+
+            background-color: #ffffff;
+
+            border: 1px solid transparent;
+
+        }
+
+
+
+        .circle:hover .paper-bottom {
+
+            transform: translate(220px, 0px); 
+
+        }
+
+
+
+        .circle:hover .paper-middle {
+
+            transform: translate(0px, 0px);
+
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
+
+        }
+
+
+
+        .circle:hover .paper-top {
+
+            transform: translate(-220px, 0px); 
+
+            box-shadow: -10px 10px 20px rgba(0,0,0,0.2);
+
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="circle">
+
+        <div class="paper paper-bottom">
+
+            <h3>Marte</h3>
+
+            <p>A colonização do planeta vermelho deixou de ser ficção para se tornar o maior objetivo da década.</p>
+
+        </div>
+
+        
+
+        <div class="paper paper-middle">
+
+            <h3>Deep Space</h3>
+
+            <p>Novos telescópios orbitais captam sinais de galáxias formadas há bilhões de anos no início de tudo.</p>
+
+        </div>
+
+        
+
+        <div class="paper paper-top">
+
+            <h3>Artemis III</h3>
+
+            <p>A missão que levará a humanidade de volta à superfície lunar para estabelecer uma base permanente.</p>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html> 
